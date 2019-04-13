@@ -4,7 +4,9 @@ import './App.css';
 import {BrowserRouter, Route ,Switch} from 'react-router-dom' 
 import Header from './component/Header'
 import Home from './component/Home'
-import TS from './component/Tagraba_Style'
+//import TS from './component/Tagraba_Style'
+import Video_page from './component/video.js'
+import Search_page from './component/Search.js'
 class App extends Component  {
   render() {
     return (
@@ -13,6 +15,8 @@ class App extends Component  {
         <BrowserRouter>
         <Switch>
           <Route exact path='/' component={Home}/> 
+          <Route path='/video/:anime_name' component={Video_page}/>
+          <Route path='/search/:anime_search' component={Search_page}/>
         </Switch>
         </BrowserRouter>
         
