@@ -1,17 +1,16 @@
 {
-  "main.css": "/static/css/main.73d7f2ef.chunk.css",
-  "main.js": "/static/js/main.ec64e76f.chunk.js",
-  "main.js.map": "/static/js/main.ec64e76f.chunk.js.map",
+  "main.css": "/static/css/main.037419c2.chunk.css",
+  "main.js": "/static/js/main.731ebbf9.chunk.js",
+  "main.js.map": "/static/js/main.731ebbf9.chunk.js.map",
   "runtime~main.js": "/static/js/runtime~main.fdfcfda2.js",
   "runtime~main.js.map": "/static/js/runtime~main.fdfcfda2.js.map",
   "static/css/2.53d4c7b0.chunk.css": "/static/css/2.53d4c7b0.chunk.css",
-  "static/js/2.13218663.chunk.js": "/static/js/2.13218663.chunk.js",
-  "static/js/2.13218663.chunk.js.map": "/static/js/2.13218663.chunk.js.map",
+  "static/js/2.bdd1ca79.chunk.js": "/static/js/2.bdd1ca79.chunk.js",
+  "static/js/2.bdd1ca79.chunk.js.map": "/static/js/2.bdd1ca79.chunk.js.map",
   "index.html": "/index.html",
-  "precache-manifest.040cbc1fa53478721ae01db69097e229.js": "/precache-manifest.040cbc1fa53478721ae01db69097e229.js",
+  "precache-manifest.6a033606d3ac02da96e07dd92f00a31b.js": "/precache-manifest.6a033606d3ac02da96e07dd92f00a31b.js",
   "service-worker.js": "/service-worker.js",
   "static/css/2.53d4c7b0.chunk.css.map": "/static/css/2.53d4c7b0.chunk.css.map",
-  "static/css/main.73d7f2ef.chunk.css.map": "/static/css/main.73d7f2ef.chunk.css.map",
-  "static/media/35.gif": "/static/media/35.285a8c02.gif",
-  "static/media/douluo-dalu-2nd-season.png": "/static/media/douluo-dalu-2nd-season.670abe8c.png"
+  "static/css/main.037419c2.chunk.css.map": "/static/css/main.037419c2.chunk.css.map",
+  "static/media/35.gif": "/static/media/35.285a8c02.gif"
 }
