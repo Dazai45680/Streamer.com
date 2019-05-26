@@ -1,24 +1,39 @@
 import React, { Component } from 'react';
 import '../App.css';
-import { Link } from 'react-router-dom'
-
-let L = '/video/sdoo'
+import { NavLink } from 'react-router-dom'
+import { createBrowserHistory } from 'history'
+export const history = createBrowserHistory({
+  forceRefresh: true
+})
 class Header extends Component {
-  handleSubmit(e) {
+  constructor(props) {
+    super(props);
+    this.state = { searchTerm: '' }
+  }
+
+  handleSubmit = e => {
     e.preventDefault()
-    return <Link toexact={L} > </Link>
+    history.push('/search/'+this.state.searchTerm);
   };
+  
+  handleChange = e => {
+    this.setState({ searchTerm: e.target.value })
+  }
+  
   render() {
-    
     return (
       <div className='navbar navbar-expand-sm navbar-dark bg-dark shadow-sm '>
         <div className='navbar-brand mr-auto '>
-          Streamer
+        <NavLink exact to='/' className='navbar-brand mr-auto'>
+          Rising flare
+          </NavLink>
        </div>
-        <form className='form-inline' onSubmit={this.handleSubmit}>
+        <form className='form-inline txt' onSubmit={this.handleSubmit}>
           <input
-            className='form-control bg-dark'
             type='text'
+            value={this.state.searchTerm}
+            onChange={this.handleChange}
+            className='form-control bg-dark text-white'
             placeholder='Search'
           />
         </form>

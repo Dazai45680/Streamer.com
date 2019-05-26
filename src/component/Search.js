@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import '../App.css';
-import Loading_Gif from '../images/35.gif'
+import Loading_Gif from '../images/3.gif'
 import { Link } from 'react-router-dom'
 
 class Home extends Component {
@@ -38,16 +38,16 @@ class Home extends Component {
         if (error) {
             return <div>Error: {error.message}</div>;
         } else if (!isLoaded) {
-            return (<div className="Loading">
-                <img src={Loading_Gif} alt="" />
-                <h1>Loading.....</h1>
+            return (    <div className="Loading">
+            <img className = "welcome-img" src={Loading_Gif} alt="" />
+            <h1 className = "welcome-text"> Rising flare</h1>
             </div>)
         } else {
 
             return (
-                <div className="container mr-5 bg-grey">
+                <div className="container">
                     {images.map(image => (
-                        <Link to={image}>
+                        <Link exact to={'../anime_info/'+image}>
                             <div className="card item shadow-lg p-3 mb-3 ml-3 mt-3 roundedm">
                                 <img className="card-img-top img-size" src={'/' + image} alt="" />
                                 <p>{image}</p>

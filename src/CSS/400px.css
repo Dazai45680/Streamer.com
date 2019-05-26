@@ -1,0 +1,77 @@
+
+@media only screen and (max-width: 400px) {
+    /*For mobile phones:*/ 
+    .welcome-text{
+      color: #FF7433;
+      font-size: 1rem;
+        margin-left: 28%;
+        margin-top: -80px;
+      animation-name: example;
+      animation-duration: 6s;
+    }
+    .welcome-img{
+      margin-left: -10px;
+      width: 300px;
+    
+    }
+    .Loading{
+      padding-top: 150px;
+      padding-left:50px;
+      padding-bottom: 400px;
+      background-color: black;
+    }
+  
+    @keyframes example {
+      0%   {margin-top: -50px;
+        font-size: 0.3rem;
+        margin-left: 25%;
+      }
+      100% {font-size: 1rem;
+        margin-left: 28%;
+        margin-top: -80px}
+    }
+
+
+    .item{
+      width: 85%;
+      height: 350px;
+      margin: 0;
+      text-align: center;
+      float: left;
+      padding-top: 30px;
+    }
+    
+    .img-size{
+      width: 100%;
+      height: 300px;
+    }
+
+    .info_image{
+      padding-left: 10px;
+      padding-top: 10px;
+      padding-bottom: 20px;
+      height: 210px;
+      width: 130px;
+      }
+      
+      .info_name{
+        font-size: 15px;
+        padding-top: 10px;
+        padding-left: 15px;
+        color: whitesmoke;
+      
+      }
+      
+      .flex{
+        display: flex;
+      }
+      
+      .anime_Links{
+        color: aqua;
+        padding-left: 10px;
+        text-decoration-line: none;
+        font-size: 15px;
+      }
+  
+  } 
+  

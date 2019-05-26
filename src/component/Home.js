@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import '../App.css';
 // import axios from 'axios';
-import Loading_Gif from '../images/35.gif'
-import { setTimeout } from 'timers';
+import Loading_Gif from '../images/3.gif'
+//import { setTimeout } from 'timers';
 import { Link } from 'react-router-dom'
 
 class Home extends Component {
@@ -38,17 +38,17 @@ class Home extends Component {
             return <div>Error: {error.message}</div>;
         } else if (!isLoaded) {
             return (<div className="Loading">
-                <img src={Loading_Gif} alt="" />
-                <h1>Loading.....</h1>
+                <img className="welcome-img" src={Loading_Gif} alt="" />
+                <h1 className="welcome-text"> Rising flare</h1>
             </div>)
         } else {
 
             return (
-                <div className="container mr-5 bg-grey">
+                <div className="container">
                     {images.map(image => (
                         <Link to={'/video/' + image}>
                             <div className="card item shadow-lg p-3 mb-3 ml-3 mt-3 roundedm">
-                                <img className="card-img-top img-size" src={'/' + image} alt="" />
+                                <img className="card-img-top img-size" src={'/' + image} alt={image} />
                                 <p>{image}</p>
                             </div>
                         </Link>

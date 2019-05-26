@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import '../App.css';
-// import axios from 'axios';
+import Loading_Gif from '../images/3.gif'
+import { Link } from 'react-router-dom'
 
 
 class video extends Component {
@@ -10,12 +11,12 @@ class video extends Component {
     }
     componentDidMount() {
         let anime_name = this.props.match.params.anime_name;
-        fetch("/videos/" + anime_name)
+        fetch("/sideos/" + anime_name)
             .then(res => res.json())
             .then(
                 (result) => {
                     this.setState({
-                        isLoaded: true,
+                        isLoadede: true,
                         video_link: result
                     });
                 },
@@ -24,12 +25,12 @@ class video extends Component {
                 // exceptions from actual bugs in components.
                 (error) => {
                     this.setState({
-                        isLoaded: true,
+                        isLoadede: true,
                         error
                     });
                 }
             )
-        fetch("/info/" + anime_name)
+        fetch("/title/" + anime_name)
             .then(res => res.json())
             .then(
                 (result) => {
@@ -53,30 +54,59 @@ class video extends Component {
     render() {
         let video = this.state.video_link;
         let anime = this.state.video_info;
-        return (
-            <div className='video_image'>
+        const { error, isLoaded , isLoadede } = this.state;
+        if (!isLoaded) {
+            return (<div className="Loading">
+            <img className = "welcome-img" src={Loading_Gif} alt="" />
+            <h1 className = "welcome-text"> Rising flare</h1>
+            </div>)
+        } else if(!isLoadede) {
 
-                <div className="mr-8 yellow">
-                    <p className="anime-P">
-                        {anime}</p></div>
-                <div className="container navbar-dark bg-dark  shadow-sm">
-                    <div className='player row'>
-                        <div className="col-lg-12 video">
-                            <video
-                                ref={node => (this.video = node)}
-                                onClick={this.handleTogglePlay}
-                                onTimeUpdate={this.handleProgress}
-                                onDoubleClick={this.handleFullscreen}
-                                controls
-                            >
-                                <source src={video} type="video/mp4" />
-                            </video>
+            return (
+                <div className='video_image'>
+
+                    <div className="container yellow">
+                        <Link exact to={'../anime_info/' + anime}>
+                            <p className="anime-P">
+                                {anime}</p>
+                        </Link>
+                    </div>
+                    <div className="container navbar-dark bg-dark  shadow-sm">
+                        <div className='player row'>
+                            <div className="col-lg-12 video">
+                                <video controls src={video} > </video>
+                                <h1 className="text-white"> be patient and have faith video link will arrive soon </h1>
+                            </div>
+                           
                         </div>
                     </div>
                 </div>
-            </div>
-        );
+            );
+        }
+        else {
+
+            return (
+                <div className='video_image'>
+
+                    <div className="container yellow">
+                        <Link exact to={'../anime_info/' + anime}>
+                            <p className="anime-P">
+                                {anime}</p>
+                        </Link>
+                    </div>
+                    <div className="container navbar-dark bg-dark  shadow-sm">
+                        <div className='player row'>
+                            <div className="col-lg-12 video">
+                                <video controls src={video} > </video>
+                            </div>
+                        
+                        </div>
+                    </div>
+                </div>
+            );
+        }
     }
 }
+
 
 export default video;
